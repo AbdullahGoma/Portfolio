@@ -1,0 +1,308 @@
+@layer base {
+  :root {
+    --black: #000501;
+    --white: #ffffff;
+    --tan: #b6b57b;
+    --green: #31b28a;
+    --blue: #007bff;
+    --lightgreen: #8cdfc5;
+    --red: #ff4404;
+    --main: "Lato", sans-serif;
+    --heading: "Josefin Sans", sans-serif;
+    --mono: "Fira Mono", monospace;
+    --poppins: "Poppins", sans-serif;
+    --base-size: 1rem;
+    --scale: 1.2;
+    --h1: calc(var(--h2) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h5: calc(var(--h6) * var(--scale));
+    --h6: var(--base-size);
+
+    --small: calc(var(--base-size) / var(--scale));
+    --shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+  }
+
+  body {
+    font-family: var(--main);
+    margin: 0px;
+    padding: 0px;
+    font-size: var(--base-size);
+    line-height: 1.5;
+  }
+
+  .mono {
+    font-family: var(--mono);
+  }
+
+  .button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--heading);
+    font-size: var(--small);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .button:hover {
+    background-color: var(--tan);
+  }
+}
+
+
+@layer nav {
+    header {
+      background-color: var(--white);
+      padding: 1px 1px;
+      border-bottom: 1px solid var(--white);
+    }
+    header:hover {
+      background-color: var(--tan);
+    }
+  
+    header svg {
+      width: 20px;
+      fill: var(--white);
+      border: 0;
+      padding: 0;
+      transition: fill 0.3s ease;
+    }
+  
+    header svg:hover {
+      fill: var(--tan);
+    }
+  
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 5px;
+      background-color: var(--black);
+      font-family: var(--heading);
+      flex-flow: row wrap;
+      align-items: baseline;
+    }
+  
+    .navbar a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+  
+    .navbar .logo-container {
+      font-weight: bold;
+      font-size: 18px;
+      align-items: center;
+      gap: 8px; /* Space between SVG and text */
+      text-decoration: none;
+      color: var(--white);
+      transition: color 0.3s ease;
+      display: inline-block;
+      vertical-align: baseline;
+    }
+  
+    .navbar h1 {
+      white-space: nowrap;
+      margin: 0; /* Remove extra space */
+      padding: 0; /* Remove extra padding */
+      font-size: var(--h3); /* Manually set a reasonable size */
+      line-height: 1; /* Prevent unnecessary spacing */
+      font-family: var(--heading);
+      font-weight: 300;
+      /*     transform: translateY(-1px); */
+      margin-bottom: -3px; /* Move it down by 3px */
+      position: relative;
+      top: 6px; /* Move it down by 1px  */
+    }
+  
+    .navbar h1 .my-name {
+      position: relative;
+      top: -2px;
+    }
+  
+    .nav-links {
+      display: flex;
+      align-items: center; /* Keep vertical alignment */
+      gap: 1px;
+    }
+  
+    .nav-links ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      flex-flow: row wrap;
+      gap: 2rem;
+  
+      position: relative;
+      top: 3px; /* Move it down by 1px  */
+    }
+  
+    .nav-links li {
+      margin: 0 5px; /* Space between links */
+    }
+  
+    .navbar a:hover {
+      color: var(--tan);
+    }
+  
+    .resume-button {
+      display: inline-block;
+      /*     background-color: var(--green); */
+      background-color: var(--white);
+      color: var(--black) !important;
+      padding: 0.3rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: var(--heading);
+      font-size: var(--small);
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 1;
+      height: 15px !important;
+      position: relative;
+      top: -1px; /* Move it down by 1px  */
+    }
+  
+    .resume-button:hover {
+      color: var(--white) !important;
+      background-color: var(--tan);
+    }
+  
+    @media (max-width: 917px) {
+      .navbar {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        
+      }
+      
+      header .navbar h1 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1.25rem;
+      }
+      
+      .nav-links ul {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    }
+    
+    @media (max-width: 717px) {
+      header .navbar {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between; /* Ensures spacing */
+        padding: 0;
+      }
+      
+      header .navbar h1 {
+          width: auto; /* Ensures it only takes up necessary space */
+          text-align: center; /* Centers text */
+        position: relative;
+      top: 12px; /* Move it down by 12px  */
+      }
+      
+      header .navbar button {
+        display: block;
+        font-size: 3rem;
+        line-height: 1;
+        border: 0;
+        background-color: transparent;
+        color: var(--white);
+        
+      position: relative;
+      top: -5px; /* Move it down by 12px  */
+      }
+      
+      header .navbar button:hover {
+        color: var(--tan);
+      }
+      
+      header .navbar button::after {
+  /*       content: "\2630"; */
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: 200%;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        padding-top: 20%;
+        transition: right 0s 0.5s opacity 0.5s;
+        background-color: var(--black);
+      }
+      
+      header .navbar button:focus + .nav-links, button:focus-within + .nav-links {
+        right: 0;
+        opacity: 1;
+        transition: right 0s, opacity 0.5s;
+      } 
+      
+      .nav-links ul {
+        display: block;
+        text-align: center;
+        position: relative;
+        top: -100vh;
+        transition: top 0.8s;
+      }
+      
+      header .navbar button:focus + .nav-links ul, header .navbar button:focus-within + .nav-links ul {
+        top: -30vh;
+      }
+      
+      .nav-links ul {
+        display: flex;
+    flex-direction: column;
+    gap: 20px;
+      } 
+      
+      .nav-links a:any-link {
+  /*       display: block;
+        padding: 1.5rem;
+        color: var(--green); */
+      }
+      
+      .nav-links .resume-button {
+      }
+      
+      .close-btn {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--white); /* Default color */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transition: background-color 1s ease;
+        cursor: pointer;
+  }
+  .close-btn:hover {
+    background-color: var(--tan); /* Changes only when hovering the close button */
+  }
+      
+      
+  
+      
+    }
+  }
