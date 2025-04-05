@@ -55,12 +55,16 @@
     }
 }
 
-
 @layer nav {
     header {
         background-color: var(--white);
         padding: 1px 1px;
         border-bottom: 1px solid var(--white);
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     header:hover {
@@ -126,7 +130,7 @@
         /* Move it down by 3px */
         position: relative;
         top: 6px;
-        /* Move it down by 1px  */
+        /* Move it down by 6px  */
     }
 
     .navbar h1 .my-name {
@@ -188,7 +192,12 @@
         background-color: var(--tan);
     }
 
-    @media (max-width: 917px) {
+    @media (max-width: 930px) {
+
+        .intro-content {
+            padding-top: 100px !important; 
+          }
+
         .navbar {
             display: flex;
             flex-direction: column;
@@ -212,7 +221,8 @@
         }
     }
 
-    @media (max-width: 717px) {
+    @media (max-width: 730px) {
+
         header .navbar {
             display: flex;
             flex-direction: row;
@@ -247,11 +257,9 @@
 
         header .navbar button:hover {
             color: var(--tan);
+            cursor: pointer;
         }
-
-        header .navbar button::after {
-            /*       content: "\2630"; */
-        }
+          
 
         .nav-links {
             position: fixed;
@@ -261,29 +269,34 @@
             height: 100vh;
             background: #fff;
             padding-top: 20%;
-            transition: right 0s 0.5s opacity 0.5s;
+            transition: right 0.3s ease, opacity 0.3s ease;
             background-color: var(--black);
+            z-index: 3;
+            pointer-events: none; /* Disable clicks when hidden */
+            padding-top: 20%; 
+            justify-content: flex-start;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
         }
-
-        header .navbar button:focus+.nav-links,
-        button:focus-within+.nav-links {
-            right: 0;
+        
+        .nav-links.active {
+            right: 0; /* Bring on-screen */
             opacity: 1;
-            transition: right 0s, opacity 0.5s;
-        }
+            pointer-events: auto; /* Enable clicks when active */
+          }
+
+
 
         .nav-links ul {
             display: block;
             text-align: center;
-            position: relative;
-            top: -100vh;
-            transition: top 0.8s;
+            position: static;
+            top: auto !important;
+            transition: none !important;
         }
 
-        header .navbar button:focus+.nav-links ul,
-        header .navbar button:focus-within+.nav-links ul {
-            top: -30vh;
-        }
 
         .nav-links ul {
             display: flex;
@@ -291,13 +304,7 @@
             gap: 20px;
         }
 
-        .nav-links a:any-link {
-            /*       display: block;
-        padding: 1.5rem;
-        color: var(--green); */
-        }
-
-        .nav-links .resume-button {}
+        
 
         .close-btn {
             content: "";
@@ -323,10 +330,6 @@
             background-color: var(--tan);
             /* Changes only when hovering the close button */
         }
-
-
-
-
     }
 }
 
@@ -407,6 +410,7 @@
         max-width: 500px;
         text-align: left;
         color: var(--white);
+        padding: 0 1rem;
     }
 
     /* Headings */
@@ -753,9 +757,11 @@
 
     /* Text Content */
     .contact-text {
+        margin: 0 auto;
         max-width: 500px;
         text-align: center;
         color: var(--white);
+        padding: 0 1rem;
     }
 
     /* Headings */
