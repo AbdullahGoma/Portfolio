@@ -53,6 +53,14 @@
     .button:hover {
         background-color: var(--tan);
     }
+
+    /* * {
+        outline: 1px solid red !important; 
+      }
+      
+      header * {
+        background-color: rgba(255,0,0,0.1) !important; 
+      } */
 }
 
 @layer nav {
@@ -861,7 +869,6 @@
         gap: 20px;
         text-align: center;
         position: relative;
-        right: -18px;
         flex-flow: row wrap;
     }
 
