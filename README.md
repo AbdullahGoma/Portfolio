@@ -1,11 +1,11 @@
-# 🚀 Personal Portfolio
+# Personal Portfolio
 
 Welcome to my personal portfolio website! This project showcases my skills, experience, and projects in a clean, modern, and interactive way.
 
 ## 🔗 Live Demo
 
 Check out the live version of my portfolio:  
-[CodePen Profile](https://codepen.io/AbdullahGoma)
+[(https://abdullahgoma.github.io/Portfolio/index.html))
 
 ## 📂 Repository
 
@@ -22,17 +22,7 @@ Explore the source code here:
 - 🛠 **Tech Stack**:
   - **HTML** – Structured content
   - **CSS** – Styling and animations
-  - **JavaScript** – Interactive elements
-  - [Include any frameworks or libraries used, e.g., React, Bootstrap, etc.]
-
----
-
-## 📸 Screenshots
-
-![Portfolio Screenshot](path/to/screenshot.png)  
-(Add more screenshots if needed)
-
----
+  - **JavaScript** – Handle dropdown list
 
 ## 🛠 Installation & Usage
 
