@@ -23,6 +23,76 @@
         --small: calc(var(--base-size) / var(--scale));
         --shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
     }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-block-size: 100vh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
 
     body {
         font-family: var(--main);
@@ -189,7 +259,7 @@
         text-transform: uppercase;
         font-weight: 600;
         line-height: 1;
-        height: 15px !important;
+        height: 25px !important;
         position: relative;
         top: -1px;
         /* Move it down by 1px  */
@@ -429,6 +499,7 @@
         /* Light green highlight */
         animation: fadeIn 1.5s ease-in-out;
         white-space: nowrap;
+      padding-bottom: 40px;
     }
 
     /* Highlighted text */
@@ -472,7 +543,7 @@
     }
 
     /* Responsive Design */
-    @media (max-width: 900px) {
+    @media (max-width: 1040px) {
         .intro-content {
             flex-direction: column;
             /* Stack on small screens */
@@ -832,13 +903,20 @@
         width: 20px;
         fill: var(--white);
         border: 0;
-        padding: 0 40px 0 0;
         transition: fill 0.3s ease;
     }
 
     .footer .social-links svg:hover {
         fill: var(--tan);
     }
+  
+  .footer .social-links a {
+    margin-right: 40px;
+}
+
+.footer .social-links a:last-child {
+    margin-right: 0;
+}
 
     .footer .footer-container {
         max-width: 600px;
